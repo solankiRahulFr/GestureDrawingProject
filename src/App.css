@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+.mainContainer{
+  /* width: 100vw;
+  height: 100vh; */
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.output_canvas{
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.webcamControl{
+  position: absolute;
+  z-index: 11;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.circleCursor{
+  border-radius: 50%;
+  margin: auto;
+  position: absolute;
+}
+
+.customButtons{
+  
+  position: absolute;
+  width: 15rem;
+  right:10px;
+  top:10px;
+  z-index: 111;
+}
+
+.info{
+  float: right;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2) !important;
+}
+.infoContent{
+  width:14rem;
+}
+.infoContent p{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.infoContent p img{
+  width:3.5rem;
+}
+.infoContent p span{
+  margin-left: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.disabledColorPicker div{
+  width: 50px;
+  height: 10px;
+  border-radius: 2px;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.disabledColorPicker{
+  padding: 5px;
+  background: rgb(255, 255, 255);
+  border-radius: 1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  display: inline-block;
+  cursor: pointer;
 }
+
