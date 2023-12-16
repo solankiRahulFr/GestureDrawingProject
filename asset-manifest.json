@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/GestureDrawingProject/static/css/main.e7ab15f3.css",
+    "main.js": "/GestureDrawingProject/static/js/main.d6d76ff6.js",
+    "static/js/787.c5df9575.chunk.js": "/GestureDrawingProject/static/js/787.c5df9575.chunk.js",
+    "static/media/drawHand.png": "/GestureDrawingProject/static/media/drawHand.309ad8d3e71a48affaf3.png",
+    "static/media/eraserHand.png": "/GestureDrawingProject/static/media/eraserHand.84326047ee22fe04578e.png",
+    "index.html": "/GestureDrawingProject/index.html",
+    "main.e7ab15f3.css.map": "/GestureDrawingProject/static/css/main.e7ab15f3.css.map",
+    "main.d6d76ff6.js.map": "/GestureDrawingProject/static/js/main.d6d76ff6.js.map",
+    "787.c5df9575.chunk.js.map": "/GestureDrawingProject/static/js/787.c5df9575.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7ab15f3.css",
+    "static/js/main.d6d76ff6.js"
+  ]
+}
