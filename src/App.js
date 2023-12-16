@@ -175,9 +175,9 @@ const createHandLandmarker = async () => {
   };
 // ------------------------------------------------FUNCTION HIDE AND SHOW WEBCAM----------------------------------------
 
-  // function ecluDistance2D(x1, y1, x2, y2) {
-  //   return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-  // }
+  function ecluDistance2D(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+  }
 // FUNCTION TO CALCULATE ECLUDIAN DISTANCE BETWEEN 3D POINTS
   function calculateDistance3D(x1, y1, z1, x2, y2, z2) {
     return Math.sqrt(
@@ -238,7 +238,7 @@ const createHandLandmarker = async () => {
         landMarks[0][12].x,
         landMarks[0][12].y,
         landMarks[0][12].z
-      ) < 0.05 &&
+      ) < 0.04 &&
       calculateDistance3D(
         landMarks[0][8].x,
         landMarks[0][8].y,
@@ -246,7 +246,7 @@ const createHandLandmarker = async () => {
         landMarks[0][12].x,
         landMarks[0][12].y,
         landMarks[0][12].z
-      ) < 0.05
+      ) < 0.04
     ) {
       movingDiv.style.display = "none";
       draw(
@@ -263,7 +263,7 @@ const createHandLandmarker = async () => {
         landMarks[0][8].y < landMarks[0][6].y &&
         landMarks[0][12].y < landMarks[0][10].y &&
         landMarks[0][16].y < landMarks[0][14].y &&
-        landMarks[0][20].y < landMarks[0][18].y
+        landMarks[0][20].y < landMarks[0][18].y && ecluDistance2D(landMarks[0][4].x,landMarks[0][4].y,landMarks[0][8].x,landMarks[0][8].y) >0.12
       ) {
         let xEra =
           canvasRef.current.width -
@@ -277,6 +277,7 @@ const createHandLandmarker = async () => {
           eraserSize,
           eraserSize
         );
+
       }
     }
   };
@@ -340,6 +341,10 @@ const createHandLandmarker = async () => {
   };
   const onEraserChange = (value) => {
     eraserSize = value;
+  };
+  const onEraserAll = () => {
+    const ctx = canvasRef.current.getContext("2d");
+    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height)
   };
 // ------------------------------------------------END==FUNCTIONS TO HANDLE INPUT PARAMETERS---------------------------------------
 
@@ -427,12 +432,14 @@ const createHandLandmarker = async () => {
             onSmoothnessChange={onSmoothnessChange}
             initialValue={0.5}
           />
+          <div className="eraseAll">
           <IntegerSlider
           disabled={tracking}
             onEraserChange={onEraserChange}
             name={"Eraser Sizes"}
-            intialValue={50}
-          />
+            intialValue={50}/>
+          <Button type="dashed" size="small" onClick={onEraserAll}>Erase all</Button>
+          </div>
           <div
             className={`${webcamRunning ? "controlButtons" : "controlOff"} ${
               viewCamButton === "Hide Webcam" ? "" : "webcamViewOff"

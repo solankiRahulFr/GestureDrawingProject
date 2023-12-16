@@ -67,3 +67,13 @@
   cursor: pointer;
 }
 
+
+
+.eraseAll button{
+  float: right;
+    position: absolute;
+    top: 220px;
+    right: 10px;
+    font-size: 12px !important;
+    height: 20px !important;
+}
