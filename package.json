@@ -2,7 +2,7 @@
   "name": "gesture_drawing",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://solankiRahulFr.github.io/GestureDrawingProject_V1",
+  "homepage": "https://solankiRahulFr.github.io/gesturedrawingproject",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@mediapipe/drawing_utils": "^0.3.1675466124",
